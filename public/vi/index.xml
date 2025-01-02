@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Frontier</title>
+    <link>http://localhost:1313/vi/</link>
+    <description>Recent content on Frontier</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi</language>
+    <copyright>Licensed under CC BY-NC 4.0</copyright>
+    <lastBuildDate>Fri, 03 Jan 2025 02:39:07 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/vi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Smb_share</title>
+      <link>http://localhost:1313/vi/posts/smb_share/</link>
+      <pubDate>Thu, 02 Jan 2025 22:41:34 +0700</pubDate>
+      <guid>http://localhost:1313/vi/posts/smb_share/</guid>
+      <description>&lt;h2 id=&#34;trọng-tâm&#34;&gt;Trọng tâm&lt;/h2&gt;&#xA;&lt;p&gt;Về cơ bản Windows yêu cầu cấu hình cả &amp;ldquo;Sharing&amp;rdquo; và &amp;ldquo;Security&amp;rdquo; để có thể chia sẻ file/ đĩa/ thư mục. Chỉ cần vào Properties, chọn tab Sharing và thêm người dùng trong Advanced Sharing. Kế tiếp, chuyển đến tab security và thêm quyền hạn vào đó. Kiểm tra xem đã cho phép chia sẻ file chưa bằng cách vào Control Panel -&amp;gt; Network and Internet -&amp;gt; Network and Sharing Center -&amp;gt; Advanced sharing settings và bật các lựa chọn lên (Khuyến nghị bật mật khẩu).&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="trọng-tâm">Trọng tâm</h2>
+<p>Về cơ bản Windows yêu cầu cấu hình cả &ldquo;Sharing&rdquo; và &ldquo;Security&rdquo; để có thể chia sẻ file/ đĩa/ thư mục. Chỉ cần vào Properties, chọn tab Sharing và thêm người dùng trong Advanced Sharing. Kế tiếp, chuyển đến tab security và thêm quyền hạn vào đó. Kiểm tra xem đã cho phép chia sẻ file chưa bằng cách vào Control Panel -&gt; Network and Internet -&gt; Network and Sharing Center -&gt; Advanced sharing settings và bật các lựa chọn lên (Khuyến nghị bật mật khẩu).</p>
+<ul>
+<li>Nếu bạn cài đặt thành công file cần chia sẻ sẽ hiện trong \\127.0.0.1 (Win + R).</li>
+</ul>
+<h2 id="giờ-đến-phần-chính">Giờ đến phần chính</h2>
+<h3 id="cài-đặt-zerotier-tạo-vlan">Cài đặt Zerotier tạo VLAN</h3>
+<p>Cách mà Zerotier hoạt động khá linh hoạt, khi đang ngoài mạng nội bộ/ mạng riêng nó sẽ hoạt động như một mạng riêng ảo/ VLAN và truyền tải file với tốc độ truyền tải tối đa bằng tốc độ kết nối mạng. Kiểm tra bằng <a href="https://fast.com">fast.com</a>. Ở mặt khác, nếu nó nhận ra cả máy nhận và máy chia sẻ file đang ở cùng một mạng <a href="https://en.wikipedia.org/wiki/Local_area_network">(LAN)</a>, tốc độ tải cao nhất ở đây sẽ chỉ là mặt giới hạn về router ( Hoặc do giới hạn bởi dây dẫn và chất lượng mạng không dây).</p>
+<ol>
+<li>Tạo và kết nối các máy cần nhận và chia sẻ trong cùng một mạng với Zerotier.</li>
+<li>Nếu nó hoạt động tốt, dùng <code>\\&lt;ip addresses&gt;</code> với IP là <strong>IP của thiết bị trên mạng Zerotier</strong>.</li>
+</ol>
+<h2 id="tăng-cường-bảo-mật">Tăng cường bảo mật</h2>
+<p>Nếu bạn dùng các cài đặt mặt định, về lý thuyết nó vẫn tồn tại một vài vấn đề bảo mật như nếu một người nào đó biết được mật khẩu thiết bị của bạn và cả 2 đều đang trong cùng một mạng nội bộ, họ có thể âm thầm truy cập vào dữ liệu của bạn bởi vì bị rò rỉ tên_đăng_nhập/ mật_khẩu và hệ thống mạng bạn đang sử dụng.</p>
+<ul>
+<li>Ở control panel, chỉ cho phép chia sẻ file ở Private network. Đưa Zerotier vào danh sách mạng đó và tất cả các mạng khác đều thuộc Public network (Có thể ảnh hưởng đến tốc độ truyền tải trong mạng nội bộ &mdash;<strong>Chưa kiểm tra</strong>&mdash;)</li>
+<li>Tạo tài khoản ảo, mở cmd với quyền admin<code>net user dummy password /add</code>, chọn bất kỳ <code>username</code> và <code>password</code> bạn muốn, Cá nhân tôi thích giữ nguyên <code>dummy</code> và chỉ thay đổi <code>password</code>. Hãy lưu lại thông tin đăng nhập đó ở nơi Chúa không thể chạm vào, LOL.</li>
+<li>(Không bắt buộc) Dùng <code>regedit</code> và thay đổi giá trị trong <code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon</code>
+<ol>
+<li>Chuột phải vào Winlogon, chọn New &gt; Key, đặt tên là SpecialAccounts.</li>
+<li>Bên trong SpecialAccounts key, tạo và đặt tên key khác là UserList.</li>
+<li>Chọn vào UserList key, chuột phải vào màn hình bên phải, chọn New &gt; DWORD (32-bit) Value.</li>
+<li>Đặt tên cho DWORD value trùng với username, (<code>dummy</code>), và chuyển value thành 0.</li>
+</ol>
+</li>
+<li>Cách này sẽ giấu tài khoản <strong>dummy</strong> khỏi màn hình đăng nhập.</li>
+<li>Giờ ở thư mục cần chia sẻ vào Sharing options và chọn chỉ tài khoản <code>dummy</code>. Chắc chắn rằng ở tab Security có cấp quyền cho Authenticated user (Mặc định).</li>
+</ul>
+<hr>
+<ul>
+<li>Dựa trên <a href="https://www.techtarget.com/whatis/definition/Confidentiality-integrity-and-availability-CIA">CIA triad</a>, điều này sẽ giúp cho dữ liệu của bạn không bị rơi vào tay nhầm người, nhưng hãy nhớ rằng không thứ gì an toàn khi kết nối với Internet. Kể cả chiếc bóng đèn thông minh cũng có thể tham gia tấn công DDOS, LOL.</li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>http://localhost:1313/vi/contact/</link>
+      <pubDate>Thu, 02 Jan 2025 22:13:53 +0700</pubDate>
+      <guid>http://localhost:1313/vi/contact/</guid>
+      <description>&lt;p&gt;Thông tin liên lạc&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Signal: abc@signal&lt;/li&gt;&#xA;&lt;li&gt;Matrix: xyz@matrixservice&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <content:encoded><![CDATA[<p>Thông tin liên lạc</p>
+<ul>
+<li>Signal: abc@signal</li>
+<li>Matrix: xyz@matrixservice</li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Services</title>
+      <link>http://localhost:1313/vi/services/</link>
+      <pubDate>Thu, 02 Jan 2025 20:21:37 +0700</pubDate>
+      <guid>http://localhost:1313/vi/services/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;Để đơn giản hóa, dùng &lt;a href=&#34;https://privacytools.io&#34;&gt;Privacytools.io&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Cho những người muốn tìm hiểu sâu &lt;a href=&#34;https://privacyguides.org/&#34;&gt;Privacyguides.org&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Rclone sync&lt;/li&gt;&#xA;&lt;li&gt;SMB shared script&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;hash.htm&#34;&gt;Hash generator&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <content:encoded><![CDATA[<ul>
+<li>Để đơn giản hóa, dùng <a href="https://privacytools.io">Privacytools.io</a></li>
+<li>Cho những người muốn tìm hiểu sâu <a href="https://privacyguides.org/">Privacyguides.org</a></li>
+<li>Rclone sync</li>
+<li>SMB shared script</li>
+<li><a href="hash.htm">Hash generator</a></li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/vi/about/about/</link>
+      <pubDate>Thu, 02 Jan 2025 18:59:48 +0700</pubDate>
+      <guid>http://localhost:1313/vi/about/about/</guid>
+      <description>&lt;h1 id=&#34;chào-mừng-đến-với-frontier-hãy-thư-giãn-và-thoải-mái-khi-đang-sử-dụng-trang-web-này&#34;&gt;Chào mừng đến với Frontier. Hãy thư giãn và thoải mái khi đang sử dụng trang web này.&lt;/h1&gt;&#xA;&lt;p&gt;Nó không hoàn hảo. Nhưng ít nhất nó hoạt động :))&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h1 id="chào-mừng-đến-với-frontier-hãy-thư-giãn-và-thoải-mái-khi-đang-sử-dụng-trang-web-này">Chào mừng đến với Frontier. Hãy thư giãn và thoải mái khi đang sử dụng trang web này.</h1>
+<p>Nó không hoàn hảo. Nhưng ít nhất nó hoạt động :))</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

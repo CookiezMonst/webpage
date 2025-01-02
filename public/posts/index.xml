@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Frontier</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Frontier</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Licensed under CC BY-NC 4.0</copyright>
+    <lastBuildDate>Thu, 02 Jan 2025 22:41:34 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Smb_share</title>
+      <link>http://localhost:1313/posts/smb_share/</link>
+      <pubDate>Thu, 02 Jan 2025 22:41:34 +0700</pubDate>
+      <guid>http://localhost:1313/posts/smb_share/</guid>
+      <description>&lt;h2 id=&#34;first-start&#34;&gt;First start&lt;/h2&gt;&#xA;&lt;p&gt;So basically, Windows requires you to config the &amp;ldquo;Sharing&amp;rdquo; and &amp;ldquo;Security&amp;rdquo; for shared it.Just create a folder and go to Properties, go to Sharing tabs edit in Advanced Sharing. Next, go to security and add permissions for it. Thrid, if you don&amp;rsquo;t enable network share at first go to Control Panel -&amp;gt; Network and Internet -&amp;gt; Network and Sharing Center -&amp;gt; Advanced sharing settings and configures it (Recommend keep the password on).&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="first-start">First start</h2>
+<p>So basically, Windows requires you to config the &ldquo;Sharing&rdquo; and &ldquo;Security&rdquo; for shared it.Just create a folder and go to Properties, go to Sharing tabs edit in Advanced Sharing. Next, go to security and add permissions for it. Thrid, if you don&rsquo;t enable network share at first go to Control Panel -&gt; Network and Internet -&gt; Network and Sharing Center -&gt; Advanced sharing settings and configures it (Recommend keep the password on).</p>
+<ul>
+<li>If you setup it properly the files you shared should show on \\127.0.0.1 (Win + R).</li>
+</ul>
+<h2 id="now-the-best-part">Now the best part</h2>
+<h3 id="install-zerotier-for-vlan">Install zerotier for VLAN</h3>
+<p>By default how zerotier works kindly smart, when outside lan network it will act like a VLAN and transfer files with peak rates is your connection speed. See <a href="https://fast.com">fast.com</a>. On the other side, if it detect you and the server you connected with are in the same network <a href="https://en.wikipedia.org/wiki/Local_area_network">(LAN)</a>, the peak download rates will be how fast the router can handle (or limit by cable or wirelesss).</p>
+<ol>
+<li>Connected the device you want to share on the same zerotier network.</li>
+<li>If it worked properly, use <code>\\&lt;ip addresses&gt;</code> which is the ip for the computer contain share folder</li>
+</ol>
+<h2 id="enchance-for-more-privacy">Enchance for more privacy</h2>
+<p>If you use the default settings, theoretically it still have some security issuses like if someone know the password of your computer and you two are on the same network, they can secretly access your data because the leaks account/password and the network you are using.</p>
+<ul>
+<li>In control panel, selected only share on private network. Move zerotier to there and remember to choose all other kinds of network is Public network (Maybe affect the local transfer rates because of <strong>not testing yet</strong>)</li>
+<li>Create a dummy account, open cmd by administrator<code>net user dummy password /add</code>, choose whatever <code>username</code> and <code>password</code> you like, i like to keep it as dummy and just change the password. Store the account somewhere god will not reach it, too.</li>
+<li>(Optional) User regedit and changing the value in <code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon</code>
+<ol>
+<li>Right-click Winlogon, select New &gt; Key, and name it SpecialAccounts.</li>
+<li>Inside the SpecialAccounts key, create another new key named UserList.</li>
+<li>Select the UserList key, right-click in the right pane, and select New &gt; DWORD (32-bit) Value.</li>
+<li>Name the DWORD value the same as the username (<code>dummy</code>) and set its value to 0.</li>
+</ol>
+</li>
+<li>This will hide the user from the login screen.</li>
+<li>Now on the shared folder change the sharing options to just <code>dummy</code> accounts. Make sure the security tabs have Authenticated user.</li>
+</ul>
+<hr>
+<ul>
+<li>Base on <a href="https://www.techtarget.com/whatis/definition/Confidentiality-integrity-and-availability-CIA">CIA triad</a>, this will make sure your data dont fall into wrong hands, but keep in mind that nothing will be safed when connect to the Internet. Even the smart bulb can be use for DDOS attack, LOL.</li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>All_worked</title>
+      <link>http://localhost:1313/posts/all_worked/</link>
+      <pubDate>Thu, 02 Jan 2025 22:11:53 +0700</pubDate>
+      <guid>http://localhost:1313/posts/all_worked/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s &lt;strong&gt;RUN&lt;/strong&gt; now. Kinda..&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>It&rsquo;s <strong>RUN</strong> now. Kinda..</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Keeplosing</title>
+      <link>http://localhost:1313/posts/keeplosing/</link>
+      <pubDate>Thu, 02 Jan 2025 20:36:39 +0700</pubDate>
+      <guid>http://localhost:1313/posts/keeplosing/</guid>
+      <description>&lt;p&gt;How the heck hugo works, like just adding 1 nav and it break entire the effort of the last thing i tried.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>How the heck hugo works, like just adding 1 nav and it break entire the effort of the last thing i tried.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Walkaround</title>
+      <link>http://localhost:1313/posts/walkaround/</link>
+      <pubDate>Thu, 02 Jan 2025 17:30:06 +0700</pubDate>
+      <guid>http://localhost:1313/posts/walkaround/</guid>
+      <description>&lt;p&gt;HI,&#xA;If you can read this you have been chosen the right sides.&#xA;Keep in mind further project will releases soon so stay &lt;strong&gt;tuned&lt;/strong&gt;.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>HI,
+If you can read this you have been chosen the right sides.
+Keep in mind further project will releases soon so stay <strong>tuned</strong>.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

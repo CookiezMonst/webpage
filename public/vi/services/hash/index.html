@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Frontier</title>
+<meta name="title" content="Frontier" />
+<meta name="description" content="&lt;!DOCTYPE html&gt;
+
+
+    
+    
+    Hash Generator with Salt
+    
+    
+
+
+    Go Back
+
+    
+        Hash Generator with Salt
+        
+            Input:
+            
+
+            Salt (Optional, 4-digit number):
+            
+
+            Generate Hash
+        
+
+        
+            Used Salt: None" />
+<meta name="author" content="" />
+<meta name="keywords" content="" />
+
+
+
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/vi/services/hash/">
+  <meta property="og:site_name" content="Frontier">
+  <meta property="og:title" content="Frontier">
+  <meta property="og:description" content="&lt;!DOCTYPE html&gt;Hash Generator with SaltGo BackHash Generator with SaltInput:Salt (Optional, 4-digit number):Generate HashUsed Salt: None">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="vi">
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Frontier">
+  <meta name="twitter:description" content="&lt;!DOCTYPE html&gt;Hash Generator with SaltGo BackHash Generator with SaltInput:Salt (Optional, 4-digit number):Generate HashUsed Salt: None">
+
+
+  
+  
+  <meta itemprop="name" content="Frontier">
+  <meta itemprop="description" content="&lt;!DOCTYPE html&gt;Hash Generator with SaltGo BackHash Generator with SaltInput:Salt (Optional, 4-digit number):Generate HashUsed Salt: None">
+  <meta itemprop="wordCount" content="24">
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+  </head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Frontier</h1></a>
+<nav>
+  <a href="/">Home</a>
+
+  <a href="/services/">Services</a>
+
+  <a href="/posts/">Blog</a>
+
+  <a href="/contact/">Contact</a>
+
+  <a href="/gallery/">Gallery</a>
+
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+  
+    
+    
+      <a class="disabled" role="link" aria-disabled="true">VI</a>
+    
+  
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1></h1>
+<p class="byline">
+  <time datetime='0001-01-01' pubdate>
+    0001-01-01
+  </time>
+  
+</p>
+
+<content>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash Generator with Salt</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2a9d8f;
+            font-size: 24px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #2a9d8f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #21867a;
+        }
+
+        .go-back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 8px 16px;
+            background-color: #264653;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .go-back-btn:hover {
+            background-color: #1c3d4c;
+        }
+
+        .results {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .results p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #e76f51;
+        }
+
+        .hash-output {
+            color: #264653;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.example.com" class="go-back-btn">Go Back</a>
+
+    <div class="container">
+        <h1>Hash Generator with Salt</h1>
+        <form id="hashForm">
+            <label for="userInput">Input:</label>
+            <input type="text" id="userInput" placeholder="Enter input..." required>
+
+            <label for="userSalt">Salt (Optional, 4-digit number):</label>
+            <input type="text" id="userSalt" pattern="\d{4}" maxlength="4" placeholder="Enter 4-digit salt (optional)">
+
+            <button type="submit">Generate Hash</button>
+        </form>
+
+        <div class="results">
+            <p id="saltMessage">Used Salt: <span class="highlight">None</span></p>
+            <p>Hash: <span id="hashedOutput" class="hash-output">None</span></p>
+        </div>
+    </div>
+
+    <script>
+        const hashForm = document.getElementById('hashForm');
+        const userInputField = document.getElementById('userInput');
+        const userSaltField = document.getElementById('userSalt');
+        const saltMessage = document.getElementById('saltMessage');
+        const hashedOutput = document.getElementById('hashedOutput');
+
+        hashForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            // Get input values
+            const userInput = userInputField.value;
+            const userSalt = userSaltField.value;
+
+            // Use user-provided salt or generate a random 4-digit salt
+            const salt = userSalt || Math.floor(1000 + Math.random() * 9000).toString();
+
+            // Hash the input + salt
+            const hash = CryptoJS.SHA256(userInput + salt).toString(CryptoJS.enc.Hex);
+
+            // Update salt message
+            saltMessage.innerHTML = userSalt || salt
+                ? `Used Salt (PLEASE WRITE IT DOWN): <span class="highlight">${salt}</span>`
+                : `Used Salt: <span class="highlight">None</span>`;
+
+            // Display hash
+            hashedOutput.textContent = hash;
+        });
+    </script>
+</body>
+</html>
+
+</content>
+<p>
+  
+</p>
+
+
+
+
+  </main>
+  <footer><small>
+  Licensed under CC BY-NC 4.0 | Made with <a href="https://github.com/clente/hugo-bearcub">Bear Cub</a>
+</small></footer>
+
+    
+</body>
+
+</html>
