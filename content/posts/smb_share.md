@@ -1,6 +1,6 @@
 +++
 date = '2025-01-02T22:41:34+07:00'
-draft = true
+draft = false
 title = 'Smb_share'
 +++
 
