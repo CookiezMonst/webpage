@@ -1,11 +1,11 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://cookiezmonst.github.io/webpage/'
 languageCode = 'en-us'
 title = 'Frontier'
 theme = "hugo-bearcub"
 copyright = "Licensed under CC BY-NC 4.0"
 [params]
 madeWith = "Made with [Bear Cub](https://github.com/clente/hugo-bearcub)"
-description = "LOL .Everything you need to know about the three languages."
+description = "Enlish format."
 [languages]
   [languages.en]
     languageName = 'EN'
@@ -14,15 +14,25 @@ description = "LOL .Everything you need to know about the three languages."
     languageName = 'VI'
     weight = 7
    [languages.vi.params]  
-    description = "101 bài code thiếu nhi."
+    description = "Vietnamese format."
 [[menu.main]]
   name = "Home"
   url = "/"
   weight = 1
 
+[[languages.vi.menu.main]]
+  name = "Tường nhà"
+  url = "/vi/"
+  weight = 1
+
 [[menu.main]]
   name = "Services"
   url = "/services/"
+  weight = 2
+
+[[languages.vi.menu.main]]
+  name = "Services"
+  url = "/vi/services/"
   weight = 2
 
 [[menu.main]]
@@ -32,7 +42,7 @@ description = "LOL .Everything you need to know about the three languages."
 
 [[languages.vi.menu.main]]
   name = "Blog"
-  url = "/posts/"
+  url = "/vi/posts/"
   weight = 3
 
 [[menu.main]]
@@ -42,10 +52,15 @@ description = "LOL .Everything you need to know about the three languages."
 
 [[languages.vi.menu.main]]
   name = "Liên lạc"
-  url = "/contact/"
+  url = "/vi/contact/"
   weight = 4
 
 [[menu.main]]
   name = "Gallery"
   url = "/gallery/"
+  weight = 5
+
+[[languages.vi.menu.main]]
+  name = "Thư viện"
+  url = "/vi/gallery/"
   weight = 5

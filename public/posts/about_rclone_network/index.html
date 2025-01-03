@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/webpage/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=webpage/livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About rclone network | Frontier</title>
+<meta name="title" content="About rclone network" />
+<meta name="description" content="First start
+Rclone has been widely used for network drives because of its convenience in supporting many different drive/cloud storage platforms. You can check it out at Rclone.
+Fun part
+Because it can supported so many drive, you can , theoretically, linking multiple drive storage into one place. So let says you have 15Gb of free storage on google drive with 10 accounts it will go up to 150Gb of lifetime vault with 0$ (Yeah it&rsquo;s sound good to be true). Here is some tips to do that properly:" />
+<meta name="author" content="" />
+<meta name="keywords" content="" />
+
+
+
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/webpage/posts/about_rclone_network/">
+  <meta property="og:site_name" content="Frontier">
+  <meta property="og:title" content="About rclone network">
+  <meta property="og:description" content="First start Rclone has been widely used for network drives because of its convenience in supporting many different drive/cloud storage platforms. You can check it out at Rclone.
+Fun part Because it can supported so many drive, you can , theoretically, linking multiple drive storage into one place. So let says you have 15Gb of free storage on google drive with 10 accounts it will go up to 150Gb of lifetime vault with 0$ (Yeah it’s sound good to be true). Here is some tips to do that properly:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-03T17:55:19+07:00">
+    <meta property="article:modified_time" content="2025-01-03T17:55:19+07:00">
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="About rclone network">
+  <meta name="twitter:description" content="First start Rclone has been widely used for network drives because of its convenience in supporting many different drive/cloud storage platforms. You can check it out at Rclone.
+Fun part Because it can supported so many drive, you can , theoretically, linking multiple drive storage into one place. So let says you have 15Gb of free storage on google drive with 10 accounts it will go up to 150Gb of lifetime vault with 0$ (Yeah it’s sound good to be true). Here is some tips to do that properly:">
+
+
+  
+  
+  <meta itemprop="name" content="About rclone network">
+  <meta itemprop="description" content="First start Rclone has been widely used for network drives because of its convenience in supporting many different drive/cloud storage platforms. You can check it out at Rclone.
+Fun part Because it can supported so many drive, you can , theoretically, linking multiple drive storage into one place. So let says you have 15Gb of free storage on google drive with 10 accounts it will go up to 150Gb of lifetime vault with 0$ (Yeah it’s sound good to be true). Here is some tips to do that properly:">
+  <meta itemprop="datePublished" content="2025-01-03T17:55:19+07:00">
+  <meta itemprop="dateModified" content="2025-01-03T17:55:19+07:00">
+  <meta itemprop="wordCount" content="484">
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/webpage/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+  </head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/webpage/" class="title"><h1>Frontier</h1></a>
+<nav>
+  <a href="/webpage/">Home</a>
+
+  <a href="/webpage/services/">Services</a>
+
+  <a href="/webpage/posts/">Blog</a>
+
+  <a href="/webpage/contact/">Contact</a>
+
+  <a href="/webpage/gallery/">Gallery</a>
+
+<a href='http://localhost:1313/webpage/index.xml'>RSS</a>
+
+
+
+
+
+
+
+  
+    
+    
+      <a class="disabled" role="link" aria-disabled="true">VI</a>
+    
+  
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>About rclone network</h1>
+<p class="byline">
+  <time datetime='2025-01-03' pubdate>
+    2025-01-03
+  </time>
+  
+</p>
+
+<content>
+  <h1 id="first-start">First start</h1>
+<p>Rclone has been widely used for network drives because of its convenience in supporting many different drive/cloud storage platforms. You can check it out at <a href="https://rclone.org/">Rclone</a>.</p>
+<h1 id="fun-part">Fun part</h1>
+<p>Because it can supported so many drive, you can , theoretically, linking multiple drive storage into one place. So let says you have 15Gb of free storage on google drive with 10 accounts it will go up to 150Gb of lifetime vault with 0$ (Yeah it&rsquo;s sound good to be true). Here is some tips to do that properly:</p>
+<ul>
+<li>You should checkout <a href="https://comparisontabl.es/cloud-storage/">Cloud storage provider</a></li>
+</ul>
+<h2 id="connecting-the-drive-together">Connecting the drive together</h2>
+<p>Assume you already know how to use rclone to link an account with it, we will go to other parts:</p>
+<ul>
+<li><a href="https://rclone.org/union/">Rclone union</a>: This is the first thing you need to do as it will connect multiple drive together.</li>
+<li><strong>Optional:</strong> It is recommended that you should create another folder inside both drive for this project, since you dont want your others data be F@ckup or it can make your drive look like a mess.
+<ul>
+<li>Step:Run this command based how many storage you choose: <code>rclone mkdir &lt;drive names&gt;:/union</code>
+&mdash; Example: <code>rclone mkdir Gdrive01:/union</code></li>
+<li>Check again with <code>rclone ls &lt;drive names&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="step">Step</h3>
+<ol>
+<li>Use rclone config to create another remotes, <code>union</code>, choose the drive you want to connecting with each other (It was a name you give to the previous remotes that were linked to the storage drive, says i name it Gdrive01 and Gdrive02 so it will be <code>Gdrive01:/ Gdrive02:/</code>). Again if you followed the <strong>optional</strong> instruction it will be <code>Gdrive01:/union Gdrive02:/union</code>.
+<ul>
+<li>If you dont want to go too deep, the default settings should work Okay. But in my cases, i want to keep one storage filling up first then go to other ones so i will choose <strong>eplfs</strong> <a href="https://rclone.org/union/#policy-descriptions">Document</a>.</li>
+</ul>
+</li>
+<li>Check if it work properly by <code>rclone mount &lt;remotes name&gt;: Z:</code></li>
+</ol>
+<h2 id="chunker">Chunker</h2>
+<p>This section is for paranoid people. Like how to <strong>optimized</strong> all the storage used.</p>
+<ul>
+<li>Example: You want to store 2Gb .zip file on both rusty 14/15Gb storage used, in theory it would be left 2Gb free on Union right. But how ?
+Rclone have something call chunker where in there if the file sizes is larger than the configure (Default 3Gb) it will split the files into smaller chunk and stored them. You can configure the chunk_size at <code>rclone config</code>.</li>
+</ul>
+<ol>
+<li>Create new remotes, <code>chunker</code>, choose the drive you want use for chunked (should be <code>union</code> if you want to solve the last problem).
+<ul>
+<li><strong>Optional</strong> It&rsquo;s recommended to create <code>chunk</code> folder on selected disk like the previous ones, see the last <a href="/webpage/posts/about_rclone_network/#connecting-the-drive-together">Optional</a>.</li>
+</ul>
+</li>
+<li>Just edit the chunk_size, the other works fine at default settings.</li>
+<li>Mount the chunker with <code>rclone mount chunker-drive:/chunk X:</code></li>
+</ol>
+<p>On my real project i use 2Gb to <em>make it fit more</em>.
+If you follow all the step the Cloud storage may look something like this:</p>
+<pre><code>Drive
+|-rclone
+	|-union
+		|-chunk
+</code></pre>
+<h4 id="thanks-for-read-to-this-point">THANKS FOR READ TO THIS POINT.</h4>
+
+</content>
+<p>
+  
+</p>
+
+
+
+
+  </main>
+  <footer><small>
+  Licensed under CC BY-NC 4.0 | Made with <a href="https://github.com/clente/hugo-bearcub">Bear Cub</a>
+</small></footer>
+
+    
+</body>
+
+</html>

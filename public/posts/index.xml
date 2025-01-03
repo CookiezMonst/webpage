@@ -2,18 +2,77 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Frontier</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>http://localhost:1313/webpage/posts/</link>
     <description>Recent content in Posts on Frontier</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Licensed under CC BY-NC 4.0</copyright>
-    <lastBuildDate>Thu, 02 Jan 2025 22:41:34 +0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jan 2025 17:55:19 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/webpage/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About rclone network</title>
+      <link>http://localhost:1313/webpage/posts/about_rclone_network/</link>
+      <pubDate>Fri, 03 Jan 2025 17:55:19 +0700</pubDate>
+      <guid>http://localhost:1313/webpage/posts/about_rclone_network/</guid>
+      <description>&lt;h1 id=&#34;first-start&#34;&gt;First start&lt;/h1&gt;&#xA;&lt;p&gt;Rclone has been widely used for network drives because of its convenience in supporting many different drive/cloud storage platforms. You can check it out at &lt;a href=&#34;https://rclone.org/&#34;&gt;Rclone&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h1 id=&#34;fun-part&#34;&gt;Fun part&lt;/h1&gt;&#xA;&lt;p&gt;Because it can supported so many drive, you can , theoretically, linking multiple drive storage into one place. So let says you have 15Gb of free storage on google drive with 10 accounts it will go up to 150Gb of lifetime vault with 0$ (Yeah it&amp;rsquo;s sound good to be true). Here is some tips to do that properly:&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h1 id="first-start">First start</h1>
+<p>Rclone has been widely used for network drives because of its convenience in supporting many different drive/cloud storage platforms. You can check it out at <a href="https://rclone.org/">Rclone</a>.</p>
+<h1 id="fun-part">Fun part</h1>
+<p>Because it can supported so many drive, you can , theoretically, linking multiple drive storage into one place. So let says you have 15Gb of free storage on google drive with 10 accounts it will go up to 150Gb of lifetime vault with 0$ (Yeah it&rsquo;s sound good to be true). Here is some tips to do that properly:</p>
+<ul>
+<li>You should checkout <a href="https://comparisontabl.es/cloud-storage/">Cloud storage provider</a></li>
+</ul>
+<h2 id="connecting-the-drive-together">Connecting the drive together</h2>
+<p>Assume you already know how to use rclone to link an account with it, we will go to other parts:</p>
+<ul>
+<li><a href="https://rclone.org/union/">Rclone union</a>: This is the first thing you need to do as it will connect multiple drive together.</li>
+<li><strong>Optional:</strong> It is recommended that you should create another folder inside both drive for this project, since you dont want your others data be F@ckup or it can make your drive look like a mess.
+<ul>
+<li>Step:Run this command based how many storage you choose: <code>rclone mkdir &lt;drive names&gt;:/union</code>
+&mdash; Example: <code>rclone mkdir Gdrive01:/union</code></li>
+<li>Check again with <code>rclone ls &lt;drive names&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="step">Step</h3>
+<ol>
+<li>Use rclone config to create another remotes, <code>union</code>, choose the drive you want to connecting with each other (It was a name you give to the previous remotes that were linked to the storage drive, says i name it Gdrive01 and Gdrive02 so it will be <code>Gdrive01:/ Gdrive02:/</code>). Again if you followed the <strong>optional</strong> instruction it will be <code>Gdrive01:/union Gdrive02:/union</code>.
+<ul>
+<li>If you dont want to go too deep, the default settings should work Okay. But in my cases, i want to keep one storage filling up first then go to other ones so i will choose <strong>eplfs</strong> <a href="https://rclone.org/union/#policy-descriptions">Document</a>.</li>
+</ul>
+</li>
+<li>Check if it work properly by <code>rclone mount &lt;remotes name&gt;: Z:</code></li>
+</ol>
+<h2 id="chunker">Chunker</h2>
+<p>This section is for paranoid people. Like how to <strong>optimized</strong> all the storage used.</p>
+<ul>
+<li>Example: You want to store 2Gb .zip file on both rusty 14/15Gb storage used, in theory it would be left 2Gb free on Union right. But how ?
+Rclone have something call chunker where in there if the file sizes is larger than the configure (Default 3Gb) it will split the files into smaller chunk and stored them. You can configure the chunk_size at <code>rclone config</code>.</li>
+</ul>
+<ol>
+<li>Create new remotes, <code>chunker</code>, choose the drive you want use for chunked (should be <code>union</code> if you want to solve the last problem).
+<ul>
+<li><strong>Optional</strong> It&rsquo;s recommended to create <code>chunk</code> folder on selected disk like the previous ones, see the last <a href="/webpage/posts/about_rclone_network/#connecting-the-drive-together">Optional</a>.</li>
+</ul>
+</li>
+<li>Just edit the chunk_size, the other works fine at default settings.</li>
+<li>Mount the chunker with <code>rclone mount chunker-drive:/chunk X:</code></li>
+</ol>
+<p>On my real project i use 2Gb to <em>make it fit more</em>.
+If you follow all the step the Cloud storage may look something like this:</p>
+<pre><code>Drive
+|-rclone
+	|-union
+		|-chunk
+</code></pre>
+<h4 id="thanks-for-read-to-this-point">THANKS FOR READ TO THIS POINT.</h4>
+]]></content:encoded>
+    </item>
     <item>
       <title>Smb_share</title>
-      <link>http://localhost:1313/posts/smb_share/</link>
+      <link>http://localhost:1313/webpage/posts/smb_share/</link>
       <pubDate>Thu, 02 Jan 2025 22:41:34 +0700</pubDate>
-      <guid>http://localhost:1313/posts/smb_share/</guid>
+      <guid>http://localhost:1313/webpage/posts/smb_share/</guid>
       <description>&lt;h2 id=&#34;first-start&#34;&gt;First start&lt;/h2&gt;&#xA;&lt;p&gt;So basically, Windows requires you to config the &amp;ldquo;Sharing&amp;rdquo; and &amp;ldquo;Security&amp;rdquo; for shared it.Just create a folder and go to Properties, go to Sharing tabs edit in Advanced Sharing. Next, go to security and add permissions for it. Thrid, if you don&amp;rsquo;t enable network share at first go to Control Panel -&amp;gt; Network and Internet -&amp;gt; Network and Sharing Center -&amp;gt; Advanced sharing settings and configures it (Recommend keep the password on).&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="first-start">First start</h2>
 <p>So basically, Windows requires you to config the &ldquo;Sharing&rdquo; and &ldquo;Security&rdquo; for shared it.Just create a folder and go to Properties, go to Sharing tabs edit in Advanced Sharing. Next, go to security and add permissions for it. Thrid, if you don&rsquo;t enable network share at first go to Control Panel -&gt; Network and Internet -&gt; Network and Sharing Center -&gt; Advanced sharing settings and configures it (Recommend keep the password on).</p>
@@ -51,27 +110,27 @@
     </item>
     <item>
       <title>All_worked</title>
-      <link>http://localhost:1313/posts/all_worked/</link>
+      <link>http://localhost:1313/webpage/posts/all_worked/</link>
       <pubDate>Thu, 02 Jan 2025 22:11:53 +0700</pubDate>
-      <guid>http://localhost:1313/posts/all_worked/</guid>
+      <guid>http://localhost:1313/webpage/posts/all_worked/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s &lt;strong&gt;RUN&lt;/strong&gt; now. Kinda..&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>It&rsquo;s <strong>RUN</strong> now. Kinda..</p>
 ]]></content:encoded>
     </item>
     <item>
       <title>Keeplosing</title>
-      <link>http://localhost:1313/posts/keeplosing/</link>
+      <link>http://localhost:1313/webpage/posts/keeplosing/</link>
       <pubDate>Thu, 02 Jan 2025 20:36:39 +0700</pubDate>
-      <guid>http://localhost:1313/posts/keeplosing/</guid>
+      <guid>http://localhost:1313/webpage/posts/keeplosing/</guid>
       <description>&lt;p&gt;How the heck hugo works, like just adding 1 nav and it break entire the effort of the last thing i tried.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>How the heck hugo works, like just adding 1 nav and it break entire the effort of the last thing i tried.</p>
 ]]></content:encoded>
     </item>
     <item>
       <title>Walkaround</title>
-      <link>http://localhost:1313/posts/walkaround/</link>
+      <link>http://localhost:1313/webpage/posts/walkaround/</link>
       <pubDate>Thu, 02 Jan 2025 17:30:06 +0700</pubDate>
-      <guid>http://localhost:1313/posts/walkaround/</guid>
+      <guid>http://localhost:1313/webpage/posts/walkaround/</guid>
       <description>&lt;p&gt;HI,&#xA;If you can read this you have been chosen the right sides.&#xA;Keep in mind further project will releases soon so stay &lt;strong&gt;tuned&lt;/strong&gt;.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>HI,
 If you can read this you have been chosen the right sides.

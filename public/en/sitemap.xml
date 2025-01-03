@@ -2,154 +2,144 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-01-02T22:41:34+07:00</lastmod>
+    <loc>http://localhost:1313/webpage/posts/about_rclone_network/</loc>
+    <lastmod>2025-01-03T17:55:19+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/webpage/posts/</loc>
+    <lastmod>2025-01-03T17:55:19+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/posts/"
+                href="http://localhost:1313/webpage/vi/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/posts/"
+                href="http://localhost:1313/webpage/posts/"
                 />
   </url><url>
-    <loc>http://localhost:1313/posts/smb_share/</loc>
+    <loc>http://localhost:1313/webpage/posts/smb_share/</loc>
     <lastmod>2025-01-02T22:41:34+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/posts/smb_share/"
+                href="http://localhost:1313/webpage/vi/posts/smb_share/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/posts/smb_share/"
+                href="http://localhost:1313/webpage/posts/smb_share/"
                 />
   </url><url>
-    <loc>http://localhost:1313/vi/posts/smb_share/</loc>
-    <lastmod>2025-01-02T22:41:34+07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/vi/</loc>
-    <lastmod>2025-01-02T22:41:34+07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/contact/</loc>
+    <loc>http://localhost:1313/webpage/contact/</loc>
     <lastmod>2025-01-02T22:13:53+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/contact/"
+                href="http://localhost:1313/webpage/vi/contact/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/contact/"
+                href="http://localhost:1313/webpage/contact/"
                 />
   </url><url>
-    <loc>http://localhost:1313/vi/contact/</loc>
-    <lastmod>2025-01-02T22:13:53+07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/all_worked/</loc>
+    <loc>http://localhost:1313/webpage/posts/all_worked/</loc>
     <lastmod>2025-01-02T22:11:53+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/vi/posts/all_worked/</loc>
-    <lastmod>2025-01-02T22:11:53+07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/gallery/</loc>
+    <loc>http://localhost:1313/webpage/gallery/</loc>
     <lastmod>2025-01-02T20:46:27+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="http://localhost:1313/webpage/vi/gallery/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/webpage/gallery/"
+                />
   </url><url>
-    <loc>http://localhost:1313/vi/gallery/</loc>
-    <lastmod>2025-01-02T20:46:27+07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/keeplosing/</loc>
+    <loc>http://localhost:1313/webpage/posts/keeplosing/</loc>
     <lastmod>2025-01-02T20:36:39+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/vi/posts/keeplosing/</loc>
-    <lastmod>2025-01-02T20:36:39+07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/services/</loc>
+    <loc>http://localhost:1313/webpage/services/</loc>
     <lastmod>2025-01-02T20:21:37+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/services/"
+                href="http://localhost:1313/webpage/vi/services/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/services/"
+                href="http://localhost:1313/webpage/services/"
                 />
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://localhost:1313/webpage/</loc>
     <lastmod>2025-01-02T18:59:48+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/"
+                href="http://localhost:1313/webpage/vi/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/"
+                href="http://localhost:1313/webpage/"
                 />
   </url><url>
-    <loc>http://localhost:1313/about/about/</loc>
+    <loc>http://localhost:1313/webpage/about/about/</loc>
     <lastmod>2025-01-02T18:59:48+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/about/about/"
+                href="http://localhost:1313/webpage/vi/about/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/about/about/"
+                href="http://localhost:1313/webpage/about/about/"
                 />
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>http://localhost:1313/webpage/about/</loc>
     <lastmod>2025-01-02T18:59:48+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/about/"
+                href="http://localhost:1313/webpage/vi/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/about/"
+                href="http://localhost:1313/webpage/about/"
                 />
   </url><url>
-    <loc>http://localhost:1313/posts/walkaround/</loc>
+    <loc>http://localhost:1313/webpage/posts/walkaround/</loc>
     <lastmod>2025-01-02T17:30:06+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/vi/posts/walkaround/</loc>
-    <lastmod>2025-01-02T17:30:06+07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/vi/services/hash/</loc>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://localhost:1313/webpage/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/categories/"
+                href="http://localhost:1313/webpage/vi/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/categories/"
+                href="http://localhost:1313/webpage/categories/"
                 />
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://localhost:1313/webpage/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/tags/"
+                href="http://localhost:1313/webpage/vi/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/tags/"
+                href="http://localhost:1313/webpage/tags/"
                 />
   </url>
 </urlset>

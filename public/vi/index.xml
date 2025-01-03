@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Frontier</title>
-    <link>http://localhost:1313/vi/</link>
+    <link>http://localhost:1313/webpage/vi/</link>
     <description>Recent content on Frontier</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi</language>
     <copyright>Licensed under CC BY-NC 4.0</copyright>
     <lastBuildDate>Fri, 03 Jan 2025 02:39:07 +0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/vi/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/webpage/vi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Smb_share</title>
-      <link>http://localhost:1313/vi/posts/smb_share/</link>
+      <link>http://localhost:1313/webpage/vi/posts/smb_share/</link>
       <pubDate>Thu, 02 Jan 2025 22:41:34 +0700</pubDate>
-      <guid>http://localhost:1313/vi/posts/smb_share/</guid>
+      <guid>http://localhost:1313/webpage/vi/posts/smb_share/</guid>
       <description>&lt;h2 id=&#34;trọng-tâm&#34;&gt;Trọng tâm&lt;/h2&gt;&#xA;&lt;p&gt;Về cơ bản Windows yêu cầu cấu hình cả &amp;ldquo;Sharing&amp;rdquo; và &amp;ldquo;Security&amp;rdquo; để có thể chia sẻ file/ đĩa/ thư mục. Chỉ cần vào Properties, chọn tab Sharing và thêm người dùng trong Advanced Sharing. Kế tiếp, chuyển đến tab security và thêm quyền hạn vào đó. Kiểm tra xem đã cho phép chia sẻ file chưa bằng cách vào Control Panel -&amp;gt; Network and Internet -&amp;gt; Network and Sharing Center -&amp;gt; Advanced sharing settings và bật các lựa chọn lên (Khuyến nghị bật mật khẩu).&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="trọng-tâm">Trọng tâm</h2>
 <p>Về cơ bản Windows yêu cầu cấu hình cả &ldquo;Sharing&rdquo; và &ldquo;Security&rdquo; để có thể chia sẻ file/ đĩa/ thư mục. Chỉ cần vào Properties, chọn tab Sharing và thêm người dùng trong Advanced Sharing. Kế tiếp, chuyển đến tab security và thêm quyền hạn vào đó. Kiểm tra xem đã cho phép chia sẻ file chưa bằng cách vào Control Panel -&gt; Network and Internet -&gt; Network and Sharing Center -&gt; Advanced sharing settings và bật các lựa chọn lên (Khuyến nghị bật mật khẩu).</p>
@@ -51,9 +51,9 @@
     </item>
     <item>
       <title>Contact</title>
-      <link>http://localhost:1313/vi/contact/</link>
+      <link>http://localhost:1313/webpage/vi/contact/</link>
       <pubDate>Thu, 02 Jan 2025 22:13:53 +0700</pubDate>
-      <guid>http://localhost:1313/vi/contact/</guid>
+      <guid>http://localhost:1313/webpage/vi/contact/</guid>
       <description>&lt;p&gt;Thông tin liên lạc&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Signal: abc@signal&lt;/li&gt;&#xA;&lt;li&gt;Matrix: xyz@matrixservice&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
       <content:encoded><![CDATA[<p>Thông tin liên lạc</p>
 <ul>
@@ -63,10 +63,19 @@
 ]]></content:encoded>
     </item>
     <item>
+      <title>Index</title>
+      <link>http://localhost:1313/webpage/vi/gallery/</link>
+      <pubDate>Thu, 02 Jan 2025 20:46:27 +0700</pubDate>
+      <guid>http://localhost:1313/webpage/vi/gallery/</guid>
+      <description>&lt;p&gt;DUMP TEST&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>DUMP TEST</p>
+]]></content:encoded>
+    </item>
+    <item>
       <title>Services</title>
-      <link>http://localhost:1313/vi/services/</link>
+      <link>http://localhost:1313/webpage/vi/services/</link>
       <pubDate>Thu, 02 Jan 2025 20:21:37 +0700</pubDate>
-      <guid>http://localhost:1313/vi/services/</guid>
+      <guid>http://localhost:1313/webpage/vi/services/</guid>
       <description>&lt;ul&gt;&#xA;&lt;li&gt;Để đơn giản hóa, dùng &lt;a href=&#34;https://privacytools.io&#34;&gt;Privacytools.io&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Cho những người muốn tìm hiểu sâu &lt;a href=&#34;https://privacyguides.org/&#34;&gt;Privacyguides.org&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Rclone sync&lt;/li&gt;&#xA;&lt;li&gt;SMB shared script&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;hash.htm&#34;&gt;Hash generator&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
       <content:encoded><![CDATA[<ul>
 <li>Để đơn giản hóa, dùng <a href="https://privacytools.io">Privacytools.io</a></li>
@@ -79,9 +88,9 @@
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/vi/about/about/</link>
+      <link>http://localhost:1313/webpage/vi/about/about/</link>
       <pubDate>Thu, 02 Jan 2025 18:59:48 +0700</pubDate>
-      <guid>http://localhost:1313/vi/about/about/</guid>
+      <guid>http://localhost:1313/webpage/vi/about/about/</guid>
       <description>&lt;h1 id=&#34;chào-mừng-đến-với-frontier-hãy-thư-giãn-và-thoải-mái-khi-đang-sử-dụng-trang-web-này&#34;&gt;Chào mừng đến với Frontier. Hãy thư giãn và thoải mái khi đang sử dụng trang web này.&lt;/h1&gt;&#xA;&lt;p&gt;Nó không hoàn hảo. Nhưng ít nhất nó hoạt động :))&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h1 id="chào-mừng-đến-với-frontier-hãy-thư-giãn-và-thoải-mái-khi-đang-sử-dụng-trang-web-này">Chào mừng đến với Frontier. Hãy thư giãn và thoải mái khi đang sử dụng trang web này.</h1>
 <p>Nó không hoàn hảo. Nhưng ít nhất nó hoạt động :))</p>

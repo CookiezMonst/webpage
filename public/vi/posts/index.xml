@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Frontier</title>
-    <link>http://localhost:1313/vi/posts/</link>
+    <link>http://localhost:1313/webpage/vi/posts/</link>
     <description>Recent content in Posts on Frontier</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi</language>
     <copyright>Licensed under CC BY-NC 4.0</copyright>
     <lastBuildDate>Thu, 02 Jan 2025 22:41:34 +0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/vi/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/webpage/vi/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Smb_share</title>
-      <link>http://localhost:1313/vi/posts/smb_share/</link>
+      <link>http://localhost:1313/webpage/vi/posts/smb_share/</link>
       <pubDate>Thu, 02 Jan 2025 22:41:34 +0700</pubDate>
-      <guid>http://localhost:1313/vi/posts/smb_share/</guid>
+      <guid>http://localhost:1313/webpage/vi/posts/smb_share/</guid>
       <description>&lt;h2 id=&#34;trọng-tâm&#34;&gt;Trọng tâm&lt;/h2&gt;&#xA;&lt;p&gt;Về cơ bản Windows yêu cầu cấu hình cả &amp;ldquo;Sharing&amp;rdquo; và &amp;ldquo;Security&amp;rdquo; để có thể chia sẻ file/ đĩa/ thư mục. Chỉ cần vào Properties, chọn tab Sharing và thêm người dùng trong Advanced Sharing. Kế tiếp, chuyển đến tab security và thêm quyền hạn vào đó. Kiểm tra xem đã cho phép chia sẻ file chưa bằng cách vào Control Panel -&amp;gt; Network and Internet -&amp;gt; Network and Sharing Center -&amp;gt; Advanced sharing settings và bật các lựa chọn lên (Khuyến nghị bật mật khẩu).&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="trọng-tâm">Trọng tâm</h2>
 <p>Về cơ bản Windows yêu cầu cấu hình cả &ldquo;Sharing&rdquo; và &ldquo;Security&rdquo; để có thể chia sẻ file/ đĩa/ thư mục. Chỉ cần vào Properties, chọn tab Sharing và thêm người dùng trong Advanced Sharing. Kế tiếp, chuyển đến tab security và thêm quyền hạn vào đó. Kiểm tra xem đã cho phép chia sẻ file chưa bằng cách vào Control Panel -&gt; Network and Internet -&gt; Network and Sharing Center -&gt; Advanced sharing settings và bật các lựa chọn lên (Khuyến nghị bật mật khẩu).</p>

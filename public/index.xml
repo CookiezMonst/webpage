@@ -2,58 +2,77 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Frontier</title>
-    <link>http://localhost:1313/</link>
+    <link>http://localhost:1313/webpage/</link>
     <description>Recent content on Frontier</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Licensed under CC BY-NC 4.0</copyright>
     <lastBuildDate>Thu, 02 Jan 2025 18:59:48 +0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/webpage/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Smb_share</title>
-      <link>http://localhost:1313/posts/smb_share/</link>
-      <pubDate>Thu, 02 Jan 2025 22:41:34 +0700</pubDate>
-      <guid>http://localhost:1313/posts/smb_share/</guid>
-      <description>&lt;h2 id=&#34;first-start&#34;&gt;First start&lt;/h2&gt;&#xA;&lt;p&gt;So basically, Windows requires you to config the &amp;ldquo;Sharing&amp;rdquo; and &amp;ldquo;Security&amp;rdquo; for shared it.Just create a folder and go to Properties, go to Sharing tabs edit in Advanced Sharing. Next, go to security and add permissions for it. Thrid, if you don&amp;rsquo;t enable network share at first go to Control Panel -&amp;gt; Network and Internet -&amp;gt; Network and Sharing Center -&amp;gt; Advanced sharing settings and configures it (Recommend keep the password on).&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<h2 id="first-start">First start</h2>
-<p>So basically, Windows requires you to config the &ldquo;Sharing&rdquo; and &ldquo;Security&rdquo; for shared it.Just create a folder and go to Properties, go to Sharing tabs edit in Advanced Sharing. Next, go to security and add permissions for it. Thrid, if you don&rsquo;t enable network share at first go to Control Panel -&gt; Network and Internet -&gt; Network and Sharing Center -&gt; Advanced sharing settings and configures it (Recommend keep the password on).</p>
+      <title>About rclone network</title>
+      <link>http://localhost:1313/webpage/posts/about_rclone_network/</link>
+      <pubDate>Fri, 03 Jan 2025 17:55:19 +0700</pubDate>
+      <guid>http://localhost:1313/webpage/posts/about_rclone_network/</guid>
+      <description>&lt;h1 id=&#34;first-start&#34;&gt;First start&lt;/h1&gt;&#xA;&lt;p&gt;Rclone has been widely used for network drives because of its convenience in supporting many different drive/cloud storage platforms. You can check it out at &lt;a href=&#34;https://rclone.org/&#34;&gt;Rclone&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h1 id=&#34;fun-part&#34;&gt;Fun part&lt;/h1&gt;&#xA;&lt;p&gt;Because it can supported so many drive, you can , theoretically, linking multiple drive storage into one place. So let says you have 15Gb of free storage on google drive with 10 accounts it will go up to 150Gb of lifetime vault with 0$ (Yeah it&amp;rsquo;s sound good to be true). Here is some tips to do that properly:&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h1 id="first-start">First start</h1>
+<p>Rclone has been widely used for network drives because of its convenience in supporting many different drive/cloud storage platforms. You can check it out at <a href="https://rclone.org/">Rclone</a>.</p>
+<h1 id="fun-part">Fun part</h1>
+<p>Because it can supported so many drive, you can , theoretically, linking multiple drive storage into one place. So let says you have 15Gb of free storage on google drive with 10 accounts it will go up to 150Gb of lifetime vault with 0$ (Yeah it&rsquo;s sound good to be true). Here is some tips to do that properly:</p>
 <ul>
-<li>If you setup it properly the files you shared should show on \\127.0.0.1 (Win + R).</li>
+<li>You should checkout <a href="https://comparisontabl.es/cloud-storage/">Cloud storage provider</a></li>
 </ul>
-<h2 id="now-the-best-part">Now the best part</h2>
-<h3 id="install-zerotier-for-vlan">Install zerotier for VLAN</h3>
-<p>By default how zerotier works kindly smart, when outside lan network it will act like a VLAN and transfer files with peak rates is your connection speed. See <a href="https://fast.com">fast.com</a>. On the other side, if it detect you and the server you connected with are in the same network <a href="https://en.wikipedia.org/wiki/Local_area_network">(LAN)</a>, the peak download rates will be how fast the router can handle (or limit by cable or wirelesss).</p>
-<ol>
-<li>Connected the device you want to share on the same zerotier network.</li>
-<li>If it worked properly, use <code>\\&lt;ip addresses&gt;</code> which is the ip for the computer contain share folder</li>
-</ol>
-<h2 id="enchance-for-more-privacy">Enchance for more privacy</h2>
-<p>If you use the default settings, theoretically it still have some security issuses like if someone know the password of your computer and you two are on the same network, they can secretly access your data because the leaks account/password and the network you are using.</p>
+<h2 id="connecting-the-drive-together">Connecting the drive together</h2>
+<p>Assume you already know how to use rclone to link an account with it, we will go to other parts:</p>
 <ul>
-<li>In control panel, selected only share on private network. Move zerotier to there and remember to choose all other kinds of network is Public network (Maybe affect the local transfer rates because of <strong>not testing yet</strong>)</li>
-<li>Create a dummy account, open cmd by administrator<code>net user dummy password /add</code>, choose whatever <code>username</code> and <code>password</code> you like, i like to keep it as dummy and just change the password. Store the account somewhere god will not reach it, too.</li>
-<li>(Optional) User regedit and changing the value in <code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon</code>
-<ol>
-<li>Right-click Winlogon, select New &gt; Key, and name it SpecialAccounts.</li>
-<li>Inside the SpecialAccounts key, create another new key named UserList.</li>
-<li>Select the UserList key, right-click in the right pane, and select New &gt; DWORD (32-bit) Value.</li>
-<li>Name the DWORD value the same as the username (<code>dummy</code>) and set its value to 0.</li>
-</ol>
+<li><a href="https://rclone.org/union/">Rclone union</a>: This is the first thing you need to do as it will connect multiple drive together.</li>
+<li><strong>Optional:</strong> It is recommended that you should create another folder inside both drive for this project, since you dont want your others data be F@ckup or it can make your drive look like a mess.
+<ul>
+<li>Step:Run this command based how many storage you choose: <code>rclone mkdir &lt;drive names&gt;:/union</code>
+&mdash; Example: <code>rclone mkdir Gdrive01:/union</code></li>
+<li>Check again with <code>rclone ls &lt;drive names&gt;</code></li>
+</ul>
 </li>
-<li>This will hide the user from the login screen.</li>
-<li>Now on the shared folder change the sharing options to just <code>dummy</code> accounts. Make sure the security tabs have Authenticated user.</li>
 </ul>
-<hr>
+<h3 id="step">Step</h3>
+<ol>
+<li>Use rclone config to create another remotes, <code>union</code>, choose the drive you want to connecting with each other (It was a name you give to the previous remotes that were linked to the storage drive, says i name it Gdrive01 and Gdrive02 so it will be <code>Gdrive01:/ Gdrive02:/</code>). Again if you followed the <strong>optional</strong> instruction it will be <code>Gdrive01:/union Gdrive02:/union</code>.
 <ul>
-<li>Base on <a href="https://www.techtarget.com/whatis/definition/Confidentiality-integrity-and-availability-CIA">CIA triad</a>, this will make sure your data dont fall into wrong hands, but keep in mind that nothing will be safed when connect to the Internet. Even the smart bulb can be use for DDOS attack, LOL.</li>
+<li>If you dont want to go too deep, the default settings should work Okay. But in my cases, i want to keep one storage filling up first then go to other ones so i will choose <strong>eplfs</strong> <a href="https://rclone.org/union/#policy-descriptions">Document</a>.</li>
 </ul>
+</li>
+<li>Check if it work properly by <code>rclone mount &lt;remotes name&gt;: Z:</code></li>
+</ol>
+<h2 id="chunker">Chunker</h2>
+<p>This section is for paranoid people. Like how to <strong>optimized</strong> all the storage used.</p>
+<ul>
+<li>Example: You want to store 2Gb .zip file on both rusty 14/15Gb storage used, in theory it would be left 2Gb free on Union right. But how ?
+Rclone have something call chunker where in there if the file sizes is larger than the configure (Default 3Gb) it will split the files into smaller chunk and stored them. You can configure the chunk_size at <code>rclone config</code>.</li>
+</ul>
+<ol>
+<li>Create new remotes, <code>chunker</code>, choose the drive you want use for chunked (should be <code>union</code> if you want to solve the last problem).
+<ul>
+<li><strong>Optional</strong> It&rsquo;s recommended to create <code>chunk</code> folder on selected disk like the previous ones, see the last <a href="/webpage/posts/about_rclone_network/#connecting-the-drive-together">Optional</a>.</li>
+</ul>
+</li>
+<li>Just edit the chunk_size, the other works fine at default settings.</li>
+<li>Mount the chunker with <code>rclone mount chunker-drive:/chunk X:</code></li>
+</ol>
+<p>On my real project i use 2Gb to <em>make it fit more</em>.
+If you follow all the step the Cloud storage may look something like this:</p>
+<pre><code>Drive
+|-rclone
+	|-union
+		|-chunk
+</code></pre>
+<h4 id="thanks-for-read-to-this-point">THANKS FOR READ TO THIS POINT.</h4>
 ]]></content:encoded>
     </item>
     <item>
       <title>Smb_share</title>
-      <link>http://localhost:1313/vi/posts/smb_share/</link>
+      <link>http://localhost:1313/webpage/posts/smb_share/</link>
       <pubDate>Thu, 02 Jan 2025 22:41:34 +0700</pubDate>
-      <guid>http://localhost:1313/vi/posts/smb_share/</guid>
+      <guid>http://localhost:1313/webpage/posts/smb_share/</guid>
       <description>&lt;h2 id=&#34;first-start&#34;&gt;First start&lt;/h2&gt;&#xA;&lt;p&gt;So basically, Windows requires you to config the &amp;ldquo;Sharing&amp;rdquo; and &amp;ldquo;Security&amp;rdquo; for shared it.Just create a folder and go to Properties, go to Sharing tabs edit in Advanced Sharing. Next, go to security and add permissions for it. Thrid, if you don&amp;rsquo;t enable network share at first go to Control Panel -&amp;gt; Network and Internet -&amp;gt; Network and Sharing Center -&amp;gt; Advanced sharing settings and configures it (Recommend keep the password on).&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="first-start">First start</h2>
 <p>So basically, Windows requires you to config the &ldquo;Sharing&rdquo; and &ldquo;Security&rdquo; for shared it.Just create a folder and go to Properties, go to Sharing tabs edit in Advanced Sharing. Next, go to security and add permissions for it. Thrid, if you don&rsquo;t enable network share at first go to Control Panel -&gt; Network and Internet -&gt; Network and Sharing Center -&gt; Advanced sharing settings and configures it (Recommend keep the password on).</p>
@@ -91,21 +110,9 @@
     </item>
     <item>
       <title>Contact</title>
-      <link>http://localhost:1313/contact/</link>
+      <link>http://localhost:1313/webpage/contact/</link>
       <pubDate>Thu, 02 Jan 2025 22:13:53 +0700</pubDate>
-      <guid>http://localhost:1313/contact/</guid>
-      <description>&lt;ul&gt;&#xA;&lt;li&gt;Signal: abc@signal&lt;/li&gt;&#xA;&lt;li&gt;Matrix: xyz@matrixservice&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-      <content:encoded><![CDATA[<ul>
-<li>Signal: abc@signal</li>
-<li>Matrix: xyz@matrixservice</li>
-</ul>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Contact</title>
-      <link>http://localhost:1313/vi/contact/</link>
-      <pubDate>Thu, 02 Jan 2025 22:13:53 +0700</pubDate>
-      <guid>http://localhost:1313/vi/contact/</guid>
+      <guid>http://localhost:1313/webpage/contact/</guid>
       <description>&lt;ul&gt;&#xA;&lt;li&gt;Signal: abc@signal&lt;/li&gt;&#xA;&lt;li&gt;Matrix: xyz@matrixservice&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
       <content:encoded><![CDATA[<ul>
 <li>Signal: abc@signal</li>
@@ -115,63 +122,36 @@
     </item>
     <item>
       <title>All_worked</title>
-      <link>http://localhost:1313/posts/all_worked/</link>
+      <link>http://localhost:1313/webpage/posts/all_worked/</link>
       <pubDate>Thu, 02 Jan 2025 22:11:53 +0700</pubDate>
-      <guid>http://localhost:1313/posts/all_worked/</guid>
-      <description>&lt;p&gt;It&amp;rsquo;s &lt;strong&gt;RUN&lt;/strong&gt; now. Kinda..&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p>It&rsquo;s <strong>RUN</strong> now. Kinda..</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>All_worked</title>
-      <link>http://localhost:1313/vi/posts/all_worked/</link>
-      <pubDate>Thu, 02 Jan 2025 22:11:53 +0700</pubDate>
-      <guid>http://localhost:1313/vi/posts/all_worked/</guid>
+      <guid>http://localhost:1313/webpage/posts/all_worked/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s &lt;strong&gt;RUN&lt;/strong&gt; now. Kinda..&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>It&rsquo;s <strong>RUN</strong> now. Kinda..</p>
 ]]></content:encoded>
     </item>
     <item>
       <title>Index</title>
-      <link>http://localhost:1313/gallery/</link>
+      <link>http://localhost:1313/webpage/gallery/</link>
       <pubDate>Thu, 02 Jan 2025 20:46:27 +0700</pubDate>
-      <guid>http://localhost:1313/gallery/</guid>
+      <guid>http://localhost:1313/webpage/gallery/</guid>
       <description>&lt;p&gt;DUMP TEST&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>DUMP TEST</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>Index</title>
-      <link>http://localhost:1313/vi/gallery/</link>
-      <pubDate>Thu, 02 Jan 2025 20:46:27 +0700</pubDate>
-      <guid>http://localhost:1313/vi/gallery/</guid>
-      <description>&lt;p&gt;Thư viện&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p>Thư viện</p>
-]]></content:encoded>
-    </item>
-    <item>
       <title>Keeplosing</title>
-      <link>http://localhost:1313/posts/keeplosing/</link>
+      <link>http://localhost:1313/webpage/posts/keeplosing/</link>
       <pubDate>Thu, 02 Jan 2025 20:36:39 +0700</pubDate>
-      <guid>http://localhost:1313/posts/keeplosing/</guid>
-      <description>&lt;p&gt;How the heck hugo works, like just adding 1 nav and it break entire the effort of the last thing i tried.&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p>How the heck hugo works, like just adding 1 nav and it break entire the effort of the last thing i tried.</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Keeplosing</title>
-      <link>http://localhost:1313/vi/posts/keeplosing/</link>
-      <pubDate>Thu, 02 Jan 2025 20:36:39 +0700</pubDate>
-      <guid>http://localhost:1313/vi/posts/keeplosing/</guid>
+      <guid>http://localhost:1313/webpage/posts/keeplosing/</guid>
       <description>&lt;p&gt;How the heck hugo works, like just adding 1 nav and it break entire the effort of the last thing i tried.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>How the heck hugo works, like just adding 1 nav and it break entire the effort of the last thing i tried.</p>
 ]]></content:encoded>
     </item>
     <item>
       <title>Services</title>
-      <link>http://localhost:1313/services/</link>
+      <link>http://localhost:1313/webpage/services/</link>
       <pubDate>Thu, 02 Jan 2025 20:21:37 +0700</pubDate>
-      <guid>http://localhost:1313/services/</guid>
+      <guid>http://localhost:1313/webpage/services/</guid>
       <description>&lt;ul&gt;&#xA;&lt;li&gt;For simplicity check &lt;a href=&#34;https://privacytools.io&#34;&gt;Privacytools.io&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;If you are a nerds, check &lt;a href=&#34;https://privacyguides.org/&#34;&gt;Privacyguides.org&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Rclone sync&lt;/li&gt;&#xA;&lt;li&gt;SMB shared script&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;hash.htm&#34;&gt;Hash generator&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
       <content:encoded><![CDATA[<ul>
 <li>For simplicity check <a href="https://privacytools.io">Privacytools.io</a></li>
@@ -184,9 +164,9 @@
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/about/about/</link>
+      <link>http://localhost:1313/webpage/about/about/</link>
       <pubDate>Thu, 02 Jan 2025 18:59:48 +0700</pubDate>
-      <guid>http://localhost:1313/about/about/</guid>
+      <guid>http://localhost:1313/webpage/about/about/</guid>
       <description>&lt;h1 id=&#34;welcome-to-frontier-feel-free-and-safe-while-surfing-around-the-website&#34;&gt;Welcome to frontier, feel free and safe while surfing around the website!&lt;/h1&gt;&#xA;&lt;p&gt;Please reload. This site contain memes.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h1 id="welcome-to-frontier-feel-free-and-safe-while-surfing-around-the-website">Welcome to frontier, feel free and safe while surfing around the website!</h1>
 <p>Please reload. This site contain memes.</p>
@@ -194,185 +174,13 @@
     </item>
     <item>
       <title>Walkaround</title>
-      <link>http://localhost:1313/posts/walkaround/</link>
+      <link>http://localhost:1313/webpage/posts/walkaround/</link>
       <pubDate>Thu, 02 Jan 2025 17:30:06 +0700</pubDate>
-      <guid>http://localhost:1313/posts/walkaround/</guid>
+      <guid>http://localhost:1313/webpage/posts/walkaround/</guid>
       <description>&lt;p&gt;HI,&#xA;If you can read this you have been chosen the right sides.&#xA;Keep in mind further project will releases soon so stay &lt;strong&gt;tuned&lt;/strong&gt;.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>HI,
 If you can read this you have been chosen the right sides.
 Keep in mind further project will releases soon so stay <strong>tuned</strong>.</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Walkaround</title>
-      <link>http://localhost:1313/vi/posts/walkaround/</link>
-      <pubDate>Thu, 02 Jan 2025 17:30:06 +0700</pubDate>
-      <guid>http://localhost:1313/vi/posts/walkaround/</guid>
-      <description>&lt;p&gt;HI,&#xA;If you can read this you have been chosen the right sides.&#xA;Keep in mind further project will releases soon so stay &lt;strong&gt;tuned&lt;/strong&gt;.&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p>HI,
-If you can read this you have been chosen the right sides.
-Keep in mind further project will releases soon so stay <strong>tuned</strong>.</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/vi/services/hash/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vi/services/hash/</guid>
-      <description>&lt;!DOCTYPE html&gt;&#xD;&#xA;&lt;html lang=&#34;en&#34;&gt;&#xD;&#xA;&lt;head&gt;&#xD;&#xA;    &lt;meta charset=&#34;UTF-8&#34;&gt;&#xD;&#xA;    &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt;&#xD;&#xA;    &lt;title&gt;Hash Generator with Salt&lt;/title&gt;&#xD;&#xA;    &lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js&#34;&gt;&lt;/script&gt;&#xD;&#xA;    &lt;style&gt;&#xD;&#xA;        body {&#xD;&#xA;            font-family: Arial, sans-serif;&#xD;&#xA;            margin: 0;&#xD;&#xA;            padding: 0;&#xD;&#xA;            background-color: #f4f4f9;&#xD;&#xA;            color: #333;&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        .container {&#xD;&#xA;            max-width: 600px;&#xD;&#xA;            margin: 50px auto;&#xD;&#xA;            background: #fff;&#xD;&#xA;            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);&#xD;&#xA;            padding: 20px;&#xD;&#xA;            border-radius: 10px;&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        h1 {&#xD;&#xA;            text-align: center;&#xD;&#xA;            color: #2a9d8f;&#xD;&#xA;            font-size: 24px;&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        form {&#xD;&#xA;            display: flex;&#xD;&#xA;            flex-direction: column;&#xD;&#xA;            gap: 15px;&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        label {&#xD;&#xA;            font-weight: bold;&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        input {&#xD;&#xA;            padding: 10px;&#xD;&#xA;            font-size: 14px;&#xD;&#xA;            border: 1px solid #ccc;&#xD;&#xA;            border-radius: 5px;&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        button {&#xD;&#xA;            padding: 10px;&#xD;&#xA;            font-size: 16px;&#xD;&#xA;            background-color: #2a9d8f;&#xD;&#xA;            color: #fff;&#xD;&#xA;            border: none;&#xD;&#xA;            border-radius: 5px;&#xD;&#xA;            cursor: pointer;&#xD;&#xA;            transition: background-color 0.3s;&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        button:hover {&#xD;&#xA;            background-color: #21867a;&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        .go-back-btn {&#xD;&#xA;            position: absolute;&#xD;&#xA;            top: 20px;&#xD;&#xA;            left: 20px;&#xD;&#xA;            padding: 8px 16px;&#xD;&#xA;            background-color: #264653;&#xD;&#xA;            color: white;&#xD;&#xA;            border: none;&#xD;&#xA;            border-radius: 5px;&#xD;&#xA;            font-size: 14px;&#xD;&#xA;            cursor: pointer;&#xD;&#xA;            text-decoration: none;&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        .go-back-btn:hover {&#xD;&#xA;            background-color: #1c3d4c;&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        .results {&#xD;&#xA;            margin-top: 20px;&#xD;&#xA;            text-align: center;&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        .results p {&#xD;&#xA;            margin: 10px 0;&#xD;&#xA;            font-size: 16px;&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        .highlight {&#xD;&#xA;            font-weight: bold;&#xD;&#xA;            color: #e76f51;&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        .hash-output {&#xD;&#xA;            color: #264653;&#xD;&#xA;        }&#xD;&#xA;    &lt;/style&gt;&#xD;&#xA;&lt;/head&gt;&#xD;&#xA;&lt;body&gt;&#xD;&#xA;    &lt;a href=&#34;https://www.example.com&#34; class=&#34;go-back-btn&#34;&gt;Go Back&lt;/a&gt;&#xD;&#xA;&#xD;&#xA;    &lt;div class=&#34;container&#34;&gt;&#xD;&#xA;        &lt;h1&gt;Hash Generator with Salt&lt;/h1&gt;&#xD;&#xA;        &lt;form id=&#34;hashForm&#34;&gt;&#xD;&#xA;            &lt;label for=&#34;userInput&#34;&gt;Input:&lt;/label&gt;&#xD;&#xA;            &lt;input type=&#34;text&#34; id=&#34;userInput&#34; placeholder=&#34;Enter input...&#34; required&gt;&#xD;&#xA;&#xD;&#xA;            &lt;label for=&#34;userSalt&#34;&gt;Salt (Optional, 4-digit number):&lt;/label&gt;&#xD;&#xA;            &lt;input type=&#34;text&#34; id=&#34;userSalt&#34; pattern=&#34;\d{4}&#34; maxlength=&#34;4&#34; placeholder=&#34;Enter 4-digit salt (optional)&#34;&gt;&#xD;&#xA;&#xD;&#xA;            &lt;button type=&#34;submit&#34;&gt;Generate Hash&lt;/button&gt;&#xD;&#xA;        &lt;/form&gt;&#xD;&#xA;&#xD;&#xA;        &lt;div class=&#34;results&#34;&gt;&#xD;&#xA;            &lt;p id=&#34;saltMessage&#34;&gt;Used Salt: &lt;span class=&#34;highlight&#34;&gt;None&lt;/span&gt;&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hash Generator with Salt</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            background: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #2a9d8f;
-            font-size: 24px;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        label {
-            font-weight: bold;
-        }
-
-        input {
-            padding: 10px;
-            font-size: 14px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            padding: 10px;
-            font-size: 16px;
-            background-color: #2a9d8f;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #21867a;
-        }
-
-        .go-back-btn {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            padding: 8px 16px;
-            background-color: #264653;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 14px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .go-back-btn:hover {
-            background-color: #1c3d4c;
-        }
-
-        .results {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .results p {
-            margin: 10px 0;
-            font-size: 16px;
-        }
-
-        .highlight {
-            font-weight: bold;
-            color: #e76f51;
-        }
-
-        .hash-output {
-            color: #264653;
-        }
-    </style>
-</head>
-<body>
-    <a href="https://www.example.com" class="go-back-btn">Go Back</a>
-
-    <div class="container">
-        <h1>Hash Generator with Salt</h1>
-        <form id="hashForm">
-            <label for="userInput">Input:</label>
-            <input type="text" id="userInput" placeholder="Enter input..." required>
-
-            <label for="userSalt">Salt (Optional, 4-digit number):</label>
-            <input type="text" id="userSalt" pattern="\d{4}" maxlength="4" placeholder="Enter 4-digit salt (optional)">
-
-            <button type="submit">Generate Hash</button>
-        </form>
-
-        <div class="results">
-            <p id="saltMessage">Used Salt: <span class="highlight">None</span></p>
-            <p>Hash: <span id="hashedOutput" class="hash-output">None</span></p>
-        </div>
-    </div>
-
-    <script>
-        const hashForm = document.getElementById('hashForm');
-        const userInputField = document.getElementById('userInput');
-        const userSaltField = document.getElementById('userSalt');
-        const saltMessage = document.getElementById('saltMessage');
-        const hashedOutput = document.getElementById('hashedOutput');
-
-        hashForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-
-            // Get input values
-            const userInput = userInputField.value;
-            const userSalt = userSaltField.value;
-
-            // Use user-provided salt or generate a random 4-digit salt
-            const salt = userSalt || Math.floor(1000 + Math.random() * 9000).toString();
-
-            // Hash the input + salt
-            const hash = CryptoJS.SHA256(userInput + salt).toString(CryptoJS.enc.Hex);
-
-            // Update salt message
-            saltMessage.innerHTML = userSalt || salt
-                ? `Used Salt (PLEASE WRITE IT DOWN): <span class="highlight">${salt}</span>`
-                : `Used Salt: <span class="highlight">None</span>`;
-
-            // Display hash
-            hashedOutput.textContent = hash;
-        });
-    </script>
-</body>
-</html>
 ]]></content:encoded>
     </item>
   </channel>
